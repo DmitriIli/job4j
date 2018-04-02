@@ -12,6 +12,10 @@ public class Convertlist{
   }
   public int[][] toArray (List<Integer> list, int rows) {
    int[][] int_arr  = new int[rows][rows];
-   for ()
+    for (Integer i:list){
+      for (int i = 0; i < rows; i++){
+      if(i != null)
+      }
+    }
   }
 }
