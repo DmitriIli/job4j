@@ -14,7 +14,13 @@ public class Convertlist{
    int[][] int_arr  = new int[rows][rows];
     for (Integer i:list){
       for (int i = 0; i < rows; i++){
-      if(i != null)
+        for (int j = 0; j < rows; j++){
+         if ((i+j+2) <= list.toarray().length) {
+         int[i][j] = (int)i;
+         } else {
+          int[i][j] = 0;
+          }
+        }     
       }
     }
   }
