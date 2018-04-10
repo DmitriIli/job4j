@@ -5,7 +5,7 @@ public class Convertlist{
     List<Integer> list = new ArrayList<Integer>();
     for(int[] arr: array){
      for (int i: arr){
-      this.list.add(i);
+      list.add(i);
       } 
      }
     return list;
@@ -15,7 +15,7 @@ public class Convertlist{
     for (Integer i:list){
       for (int i = 0; i < rows; i++){
         for (int j = 0; j < rows; j++){
-         if ((i+j+2) <= list.toarray().length) {
+         if ((i+j+2) <= list.toArray().length) {
          arr[i][j] = (int)i;
          } else {
           arr[i][j] = 0;
