@@ -12,11 +12,11 @@ public class Convertlist{
   }
   public int[][] toArray (List<Integer> list, int rows) {
    int[][] arr  = new int[rows][rows];
-    for (Integer i:list){
+    for (Integer ind:list){
       for (int i = 0; i < rows; i++){
         for (int j = 0; j < rows; j++){
          if ((i+j+2) <= list.toArray().length) {
-         arr[i][j] = (int)i;
+         arr[i][j] = (int)ind;
          } else {
           arr[i][j] = 0;
           }
