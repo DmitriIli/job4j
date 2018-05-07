@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class ConvertListTest {
     @Test
     public void convertMatrixToList() {
-        ConvertList list = new ConverList();
+        ConvertList list = new ConvertList();
         int[][] input = {
                 {1, 2},
                 {3, 4}
