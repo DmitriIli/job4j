@@ -1,5 +1,4 @@
 package ru.job4j.selection;
-
 public class Convertlist{
   public List<Integer> toList (int[][] array) {
     List<Integer> list = new ArrayList<Integer>();
