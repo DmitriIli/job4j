@@ -20,5 +20,13 @@ public class ConvertListTest {
         List<Integer> result = list.toList(input);
         assertThat(result, is(expect));
     }
-}
+    @Test
+    public void convertListToArray(){
+        ConvertList list = new ConvertList();
+        int[][] expected = new int[][]{{1,2,3},{4,5,6},{7,0,0}};
+        List<Integer> origin = Arrays.asList(1,2,3,4,5,6,7);
+        int[][] result = list.toArray(origin, 3);
+        assertThat(result, is(expected));
+    }
 
+}
