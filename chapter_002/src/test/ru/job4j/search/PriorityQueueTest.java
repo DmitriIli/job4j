@@ -1,8 +1,6 @@
-package ru.job4j.selection;
+package ru.job4j.search;
 
 import org.junit.Test;
-
-import java.util.*;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

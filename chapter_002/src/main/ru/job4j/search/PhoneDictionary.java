@@ -1,4 +1,6 @@
-package ru.job4j.selection;
+package ru.job4j.search;
+
+import ru.job4j.search.Person;
 
 import java.util.ArrayList;
 import java.util.List;
