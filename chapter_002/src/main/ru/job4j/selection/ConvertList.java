@@ -1,6 +1,8 @@
 package ru.job4j.selection;
 
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ConvertList {
@@ -33,5 +35,15 @@ public class ConvertList {
             if (i == rows) break;
         }
         return arr;
+    }
+
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> convert_list = new ArrayList<Integer>();
+        for (int[] array : list) {
+            for (int i : array) {
+                convert_list.add(i);
+            }
+        }
+        return convert_list;
     }
 }
