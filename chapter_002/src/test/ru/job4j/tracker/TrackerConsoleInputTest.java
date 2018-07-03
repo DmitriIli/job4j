@@ -11,10 +11,12 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class TrackerTest {
+public class TrackerConsoleInputTest {
+
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
+        StubInput stubInput = new StubInput(new String[]{"0","name", "desriprion","7"});
         Item item = new Item("test1", "testDescription", "123");
         tracker.add(item);
         tracker.findAll();
@@ -73,4 +75,5 @@ public class TrackerTest {
         tracker.replace("1",new Item("2","2","2"));
         assertThat(tracker.findById("2").getName(), is("2"));
     }
+
 }

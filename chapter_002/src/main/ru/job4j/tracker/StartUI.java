@@ -12,7 +12,7 @@ public class StartUI {
     private static final String REPLACE = "6";
     private static final String EXIT = "7";
 
-    ConsoleInput input = new ConsoleInput();
+    Input input = new ConsoleInput();
     /**
      * Хранилище заявок.
      */
@@ -24,7 +24,7 @@ public class StartUI {
      * @param input   ввод данных.
      * @param tracker хранилище заявок.
      */
-    public StartUI(ConsoleInput input, Tracker tracker) {
+    public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
@@ -34,35 +34,41 @@ public class StartUI {
      */
     private void createItem() {
         System.out.println("------------ Добавление новой языки --------------");
-        String name = this.input.inputAnswer("Введите имя заявки :");
-        String desc = this.input.inputAnswer("Введите описание заявки :");
+        String name = this.input.ask("Введите имя заявки :");
+        String desc = this.input.ask("Введите описание заявки :");
         Item item = new Item(name, desc);
         this.tracker.add(item);
         System.out.println("------------ Новая заявка с getId : " + item.getId() + "-----------");
+    }
+
+    public void showMenu() {
+        System.out.print("1. Add item\n" + "2. Delete item\n" + "3. Find item by Id\n" +
+                "4. Find items by name\n" + "5. Find All\n" + "6. Replace item\n" + "7. Exit Program\n");
     }
 
     /**
      * Основой цикл программы.
      */
     public void init() {
+        this.showMenu();
         boolean exit = false;
         while (!exit) {
-            input.showMenu();
-            String answer = this.input.inputAnswer("Введите пункт меню : ");
+            String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
                 this.createItem();
             } else if (DELETE.equals(answer)) {
-                this.tracker.delete(this.input.inputAnswer("введите ID заявки: "));
+                this.tracker.delete(this.input.ask("введите ID заявки: "));
             } else if (FINDEBYID.equals(answer)) {
-                this.tracker.print(this.tracker.findById(this.input.inputAnswer("введите ID заявки: ")));
+                this.tracker.print(this.tracker.findById(this.input.ask("введите ID заявки: ")));
             } else if (FINDBYNAME.equals(answer)) {
-                this.tracker.findByName(this.input.inputAnswer("введите имя заявки: "));
+                this.tracker.findByName(this.input.ask("введите имя заявки: "));
                 this.tracker.print(this.tracker.result);
             } else if (FINDALL.equals(answer)) {
                 this.tracker.findAll();
                 this.tracker.print(this.tracker.result);
             } else if (REPLACE.equals(answer)) {
-                this.tracker.replace(this.input.inputAnswer("Введите ID"), new Item("new name", "new descr"));
+                this.tracker.replace(this.input.ask("Введите ID"), new Item(this.input.ask("введите имя")
+                        , this.input.ask("введите описание")));
             } else if (EXIT.equals(answer)) {
                 exit = true;
             }
